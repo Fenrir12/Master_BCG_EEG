@@ -1,0 +1,2 @@
+This folder contains all documents explaining and keeping track of the structure of the master. 
+Ideas, mindmap, block schematics and all sorts of things will be here to get information about the master.
