@@ -1,0 +1,19 @@
+## Ce document défini la structure préliminaire pour l'objectif de conception du stage 3.
+
+Les étapes tels qu'abordés avec Neila :
+1 - Créer un outils logiciels de collecte des données temps réel avec MATLAB 
+2 - Faire le traitement des données
+3 - Installer le système chez la clinicienne de Sherbrooke
+4 - Instaurer une intelligence artificielle
+
+Ma vision des objectifs :
+1 - Il serait pertinent d'éviter d'utiliser un ordinateur pour faire ce monitoring, un module sans-fil pourrait être de mise. À voir avec Neila.
+Peut-être commencer par réaliser le tout sur MATLAB pour avoir une base logicielle et définir la structure logicielle du preprocessing (filtrage, extraction de caractéristiques). Un module bluetooth serait de mise, ou bien wifi. 
+	
+	a - Faire l'implémentation MATLAB
+	b - Ajouter quelques pipelines d'extraction de caractéristiques reconnue en BCG ou en ECG s'ils sont robustes
+	c - Ajouter une interface graphique (MATLAB GUIDE)
+	
+2 - À clarifier après l'étape 1
+
+Possibilité pour la clinicienne d'avoir accès au BCG de ses patients à distance sur u
