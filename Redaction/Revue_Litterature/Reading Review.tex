@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,onecolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[utf8]{inputenc}
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage[raggedright]{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Real-time DWT processing on mobile platform $\bullet$ Avril 2017 $\bullet$ Projet GTS831} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+\usepackage{graphicx} 
+\graphicspath{ {images/} }
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Litterature Review On Ballistocardiograms Processing Tools} % Title of the article
+\author{%
+\textsc{S. Otis}\\[1ex]%\thanks{A thank you or further information} \\[1ex] % Your name
+\normalsize École de technologie Supérieure \\ % Your institution
+\normalsize \href{mailto:samuel.otis.1@ens.etsmtl.ca}{samuel.otis.1@ens.etsmtl.ca}
+}
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\maketitle
+\section{Introduction}
+%Definition of methods for fast copypaste
+Investigating vital signs in a non-obtrusive way has been of great interest in the last decade. Many cardiorespiratory pathologies would then be easier to track and gather results from. This would greatly help in classifying different patients with special health features. Many technologies are used to detect these signals, be they classical or new ways of acquiring them. An interesting sensor newly developed is the fiber optic sensor (FOS).
+
+%Sensors--------------------------------------------------------------------------------
+FOS are a way of acquiring the mechanical activity of the human body through the modulation of the light in response to an external perturbation during the transmission. They have been thoroughly used due to their high sensitivity and lower cost of production. More precisely, the microbend theory is used for building special types of FOS. Microbending of the optical fiber causes an attenuation of the light transmmited through it, as per critical angle property [Udd]. Multiple pairs of microbenders, when displaced due to physical perturbation, squeezes the fiber. This causes more intensity loss in the cladding region of the optical fiber and increases in function of the pressure exerted on the sensor. 
+Other known sensors are also used. Some mats with inbedded strain gauge or hydraulic sensor were developed and were mostly used to monitor respiratory and cardiac activity as well as body movements.  Piezoelectric sensors with PVDF or EMFi material designed in a mat also monitored such signals and served to detect an epileptic crisis or dementia.
+
+%Ballistocardiogram------------------------------------------------------------------------------------------
+The hardest signal to retrieve is certainly the heart rate. The Ballistocardiogram (BCG) measures the ballistic forces generated by the heart, that is, the mechanical response of the body when the heart ejects the blood into the vascular tree. This technique has been used since the late 19th century \cite{gordon_certain_1877}, 1877], but failed to justify its usefulness. Still, it has awakened much interest for bridging a gap in basic Electrocardiogram (ECG), that is, a new information about the actual state of the vascular tree and the pumping effect of the heart \cite{singewald_ballistocardiography:_1954}. Lately, with the improvements of signal processing tools and technological advancements, the interest for the BCG was renewed. It is a most useful tool to obtain important information on the cardiac cycles as well as on the respiratory dynamics, while being unobtrusive. Analogously to the ECG, which possesses the so-called QRS complex describing the high-amplitude shape of the electrical stimulations during systolic and dystolic cycles, the BCG possesses the IJK complex. It is then possible to extract information such as the J-J intervals to characterize the cardiac rythm. One of the difficulties in analyzing such signals lie in getting rid of the motion artifacts, that is, when a person moves it body while trying to record the BCG.
+%DSP---------------------------------------------------------------------------------------------------------
+A large range of processing tools exist to analyze the raw signal coming from the sensors and extract the BCG as well as the breathing rate and body movements. The first tool coming to mind are the wavelets.
+%Wavelets----------------------------------------------------------------------------------------------------
+The Wavelet Transform (WT) is often used for signal denoising as well as for feature extraction. Its strength relies in its ability to split the signal into multiple frequency components. That is, we gain a spectro-temporal representation of this signal. The transform operation actually convolve the signal through  a lowpass and a highpass filter, thus giving detail and smooth coefficients, representative of coarse and finer scale phenomenons. It is possible to go deeper in the decomposition levels by reapplying the passage into the filters to gain detail coefficients at finer scales. Compared to the Fourier transform, the wavelet transform is able to detect discontinuities in the signal without generating too much coefficients to characterize it. 
+%------------------------------------------------------------------------------------------------------------
+%EMD---------------------------------------------------------------------------------------------------------
+Another useful tool is the empirical mode decomposition (EMD). It is a modified method derived from the Hilbert Transform called the Hilbert-Huang transform [Huang, 1998]. This method decomposes a given signal in finite and smaller 'intrinsic mode functions'(IMFs). It then allows to see instantaneous frequencies as a function of time.
+%------------------------------------------------------------------------------------------------------------
+%Cepstrum----------------------------------------------------------------------------------------------------
+Last but not least, the cepstrum is a long known processing technique often used for speech processing[Oppenheim and Schafer, 2004], based in the domain of the quefrencies. Still, its usefulness in terms of heart rate and breathing rate extraction is undeniable. The cepstrum is the inverse Fourier transform of the logarithmic spectrum of a signal. With this representation, we can uncover the fundamental periods of a signal, that is, the time occurence of certain signal such as heart and breathing rate.
+-------------------------------------------------------------------------------------------------------------
+\section{Litterature Review}
+\subsection{Sensors}
+%Sensors--------------------------------------------------------------------------------
+Lots of efforts are directed toward the use of FOS for ballistocardiograms and other biomedical signals. Lau et al.[2013] developed a microbend fiber optic sensor able to measure the force exerted on a sensor mat. This extremely sensitive mat was used in an MRI environment, from the perspective of real-time measuring and recording of the breathing rate. The raw data went in a bandpass filter stage and a peak detection algorithm to retrieve the breathing rate of the patient. The novel sensor showed successfull results in acquiring an MRI in a respiratory-gated acquisition, thus preventing respiratory physiological noise from patients in the MRI.
+
+Chen et al. [2012] also used an microbend FOS to extract the BCG from healthy subjects by applying band pass analog and digital filtering to the recorded signal. The BCG is measured on the back of a patient sitting on a chair. They used a NI acquisiton card and a running version of Labview ona computer to acquire the signal and filter it. Analogic filtering was successfully applied directly on the prototype to further reduce more the cost of their system.
+
+Sadek et al. [2015] used a Fiber Bragg Grating Sensor (FBG) to sample the BCG from ten subjects from under a thin bed sheet. Even tough most researches are oriented toward acquiring the heart and breathing rate from the slight signals detected by the FOS. 
+
+Dziuda et al. [2012] used  an FBG to extract the breathing rate as well as the heart rate from a healthy subject. The sensor is placed between the back of the subject and the back of a chair and undergoes filtering, averaging and referencing with an ECG.
+
+Other than FOS sensor, researchers used other sensor type as described earlier. Pino et al. [2015] retrieved the heart rythm using an EMFi piezoelectric sensor.
+
+\subsection{Signal processing}
+%Signal preprocessing--------------------------------------------------------------------
+An important step in retrieving the heart rate is, naturally, the use of a rigorous signal processing to extract the heart beats from the signal. Many sources of noise may pollute the signal, be it the "flicker" noise (1/f noise or pink noise) coming from the electrical equipment, the surrounding power line interference at 50 Hz or 60 Hz, depending on the geography, or the motion artifact noise. The biggest sources of noise are the motion and breathing artifacts, interfering with the measurements when the subject does even the smallest gesture. To find the BCG in all these sources of noise, many signal processing tools from simple to complex ones are used.
+\subsubsection{Wavelet transform}
+%Wavelets
+Aiming to record vital signs in a non-obtrusive way, Postolache et al.[2007] transformed the signal with a wavelet base Daubechie 4 on eight levels of decomposition. They filtered the target coefficients with a moving average. Their study, based with 10 young subjects, was validated against a reference ECG and a spirometer for the breathing signal. The limit of their study, tough, lies with the use of strictly-sane subjects. 
+Combining Donoho and Johnstone [1995] wavelet shrinking method with a Symlet 8 wavelet base, Jin et al.[2009] detected the heart rate with a peak searching algorithm. Validation of their method is only visual using the graphs of their BCG and of the ECG. The study, done with one subject of unknown health state, doesn't give any expression of the heart rate according to time nor deals with the problem of motion artifacts.
+Many other teams also used wavelets with different mother wavelets basis to extract the BCG from the raw recordings. Delière et al. [2015] implemented continuous wavelet tranform (CWT) with a Morlet base to quantify the ballistocardiogram amplitude modulation induced by respiration (BAMR) in an imposed controlled breathing (ICB) protocol. The BAMR was expressed through the maximum local energy in each cardiac cycle. They could then investigate the heart rate variation (HRV) with the BCG reading rather than with the respiratory sinus arrhythmia phenomenon, derived from the ECG. The results came from four healthy adults and showed good correlations correlation coefficient of 0.8466 between RSA and their new BAMR. The validation was done with two estimated values, the RSA being calculated with their own algorithm from the RR interval (RRI).
+Sadek et al. [2017] implemented the Maximal Overlap Direct Wavelet Transform (MODWT) to extract the BCG signal from a microbend FOS. This method proved far more faster than their precedent method using the CEEMDAN algorithm on the data taken on an FBG sensor mat with little more error on the measurements.They did so with a 8-vanishing moment Symlet  wavelet base. They validated their study on 50 subjects with a reference ECG.
+
+%Wavelets/EMD
+Pino et al. [2015] compared the EMD and wavelet approach to detect the BCG. They used simple EMD decomposition to extract the BCG. The function modes 2 and 3 contained the heart rate signal but the wavelet approach showed nonetheless better results. Their wavelet approach used a Daubechie 6 wavelet base to extract the detail coefficients which contained the bcg signal. To validate their research, they used 54 voluntary subjects and a reference ECG. Their study was, though, sensible to motion artifacts, having some heart beats cover results as low as 48\%. That is, 52\% of the heart beats were not detected.
+
+\subsubsection{Empirical Mode Decomposition}
+%EMD
+Pinheiro et al. [2010] also decomposed the BCG time series into few components and found the BCG in motionless recordings and were able to recover part of the heartbeat information. It still was unable to recover most of the information when a motion artifact is involved. They validated on eight subjects, one having a coronary stent, without any ECG reference. Their goal was more oriented toward online computing, achieving an excellement computing time of less than 1 ms per segment. Still, their study was limited by the size of the sample and the lack of ECG validation
+Following the ensemble EMD (EEMD) procedure, Song et al.[2015] extracted the BCG for cardiovascular classification. They used temporal, frequential and non-linear methods to retrieve the heart rate in the BCG and then classify the features with a naive bayes classifier. They had no ECG reference since their study's goal was to classify diseases. Their best classification result was around 92\%, combining all three heart rate methods. They still had difficulties managing motion artifacts.
+
+Sadek et al. [2015] used an enhanced version of the empirical mode decomposition to extract the BCG from an bragg-grating FOS sensor. This method proved to be reliable. At the ninth decomposition component of the CEEMDAN, they retrieved the heart rate with little error and, together with sensor fusion, they achieved a faster heart rate reading than with EEMD. Moreover, it was more efficient in dealing with motion artifacts and having sensor fusion. This study, done on 10 subjects, had an ECG reference to validate the results. The backfire of their method is the slow computing time of about 30 seconds for the CEEMDAN algorithm. The subjects were also all healthy, thus having ideal vital signs.
+
+
+\subsubsection{Machine Learning}
+%Machine learning
+
+\subsubsection{Cepstrum}
+%Cepstrum
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+ 
+
+\end{document}
