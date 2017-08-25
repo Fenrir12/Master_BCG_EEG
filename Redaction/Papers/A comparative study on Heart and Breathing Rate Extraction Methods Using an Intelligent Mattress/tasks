@@ -1,0 +1,73 @@
+Objectif global : Write paper on "A Comparative Study on Heart and Breathing Rate Extraction Methods Using an Intelligent Mattress"
+
+Abstract
+
+Introduction
+	[X]Intro clinique (contexte médical) orientée pathologies
+		[X]La statistique des diagnostiques ratés
+		[X]La statistique du manque de suivi clinique et à domicile
+	[X]Contexte de l'importance de monitorer le rythme cardiaque
+		[X]Le suivi de l'évolution des pathologies
+		[X]Détection de situation fatale
+		[X]Utilité de mesures non-invasives
+	[X]Solution du matelas intelligent apportée récemment
+		[X]Arrivée des matelas sensibles aux vibrations
+		[X]Différentes technologies 
+	[X]Définition des méthodes d'extraction avec la solution
+		[X]Importance de comparer les méthodes
+		[X]Regroupement des méthodes d'extraction
+		[X]Quatre méthodes d'extraction principalement utilisée
+	[X]But de l'étude comparative
+		[X]Isoler la méthode la plus efficace
+		[X]Différents critères d'efficacité
+
+Litterature Review
+	[X]Présenter les contextes d'utilisation des matelas intelligent
+	[X]Présenter les méthodes d'extraction utilisés des signes vitaux 
+	
+Methodology
+	[X]Description du système
+	[X]Description du protocole
+	[X]Description de l'implémentation des algorithme
+		[X]Peak search algorithm		
+		[X]MODWT
+		[X]CEMMDAN	
+		[X]CEPSTRUM
+		[X]CLUSTERING
+	[X]Description de la validation
+		[X]MAE
+		[X]CS
+	
+Results
+Conclusion
+
+
+Survey Paper
+Introduction
+Importance and significance of the topic
+Discuss the background and target audience
+Summarize the surveyed research area and explain why the surveyed area has been studied
+Summarize the classification scheme you used to do the survey
+Summarize the surveyed techniques with the above classification scheme
+
+Survey details/Body of paper
+Present the surveyed techniques using the classification scheme in detail
+Identify the trends in the surveyed area. Give evidences for your decision
+Identify some leading research/products/companies/web-sites
+Identify the unresolved problems/difficulties, and future research issues
+
+Conclusions/Future work
+Summarize the conclusions of your survey
+References
+List all the citations referenced in your paper 
+
+How to write survey or review papers and What sections should.... Available from: https://www.researchgate.net/post/How_to_write_survey_or_review_papers_and_What_sections_should_be_mentioned_in_such_papers [accessed Aug 22, 2017].
+
+À faire pomodoro :
+22/08/2017
+[X]Graphe BCG
+[X]Graphe montage
+[X]Schéma microbend
+[]Abstract
+[]Table MAE/Sujet
+[]Table Computational Speed
